@@ -71,7 +71,15 @@ namespace SCAMr3.Controllers
         // GET: Classes/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+			List<Course> courseList = dbCourse.Courses.ToList();
+			var selectList = new List<SelectListItem>();
+			foreach (Course c in courseList)
+			{
+				selectList.Add(new SelectListItem { Text = c.Name, Selected = false, Value = c.ID.ToString() });
+			}
+			ViewBag.Courses = selectList;
+
+			if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
