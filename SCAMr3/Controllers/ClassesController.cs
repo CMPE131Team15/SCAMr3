@@ -13,11 +13,12 @@ namespace SCAMr3.Controllers
     public class ClassesController : Controller
     {
         private ClassDBContext db = new ClassDBContext();
+		private CourseDBContext dbCourse = new CourseDBContext();
 
-        // GET: Classes
-        public ActionResult Index()
+		// GET: Classes
+		public ActionResult Index()
         {
-            return View(db.Class.ToList());
+			return View(db.Class.ToList());
         }
 
         // GET: Classes/Details/5
@@ -38,7 +39,16 @@ namespace SCAMr3.Controllers
         // GET: Classes/Create
         public ActionResult Create()
         {
-            return View();
+			List<Course> courseList = dbCourse.Courses.ToList();
+			var selectList = new List<SelectListItem>();
+
+			foreach (Course c in courseList)
+			{
+				selectList.Add(new SelectListItem { Text = c.Name, Selected = false, Value = c.ID.ToString() });
+			}
+
+			ViewBag.Courses = selectList;
+			return View();
         }
 
         // POST: Classes/Create
@@ -48,7 +58,7 @@ namespace SCAMr3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,ClassNumber,CourseID,SectionNumber,Instructor,Days,StartTime,EndTime")] Class @class)
         {
-            if (ModelState.IsValid)
+			if (ModelState.IsValid)
             {
                 db.Class.Add(@class);
                 db.SaveChanges();
