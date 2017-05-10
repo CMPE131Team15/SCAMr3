@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Schedule";
+}
+<!--<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>-->
+
+<div class="container">
+    <div style=" " class="jumbotron">
+        <h2>My Class Schedule</h2>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="form-group">
+        <div class="col-md-2">
+            <select id="Term" class="form-control">
+                <option>Spring 2017</option>
+                <option>Summer 2017</option>
+                <option>Fall 2018</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            <select id="Major" class="form-control">
+                <option>SE</option>
+                <option>CMPE</option>
+                <option>CS</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-2">
+            <select id="Course" class="form-control">
+                <option>133</option>
+                <option>149</option>
+                <option>131</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-1">
+            <select id="Section" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary">Add Class</button>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Term</th>
+            <th>Description</th>
+            <th>Class</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Spring 2017</td>
+            <td>Software Engr I</td>
+            <td>CMPE 131-01</td>
+        </tr>
+        <tr>
+            <td>Spring 2017</td>
+            <td>Information Security</td>
+            <td>CMPE 166-02</td>
+        </tr>
+        <tr>
+            <td>Spring 2017</td>
+            <td>Engr Statistics</td>
+            <td>ISE 130-01</td>
+        </tr>
+    </tbody>
+</table>
+<div class="col-md-10 text-center">
+
+            @Html.ActionLink("Generate Schedule", "GeneratedSchedule", "Home", new {@class="btn btn-primary" })
+
+</div>

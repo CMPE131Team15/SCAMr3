@@ -287,6 +287,12 @@
     <Content Include="Views\Classes\Details.cshtml" />
     <Content Include="Views\Classes\Edit.cshtml" />
     <Content Include="Views\Classes\Index.cshtml" />
+    <Content Include="Views\Home\Boards.cshtml" />
+    <Content Include="Views\Home\FAQs.cshtml" />
+    <Content Include="Views\Home\GeneratedSchedule.cshtml" />
+    <Content Include="Views\Home\Profile.cshtml" />
+    <Content Include="Views\Home\Schedule.cshtml" />
+    <Content Include="Views\Home\Threads.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

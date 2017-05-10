@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Boards";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit">
+                    <span class="glyphicon glyphicon-search"></span>
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+
+<h2>Course Board</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="col-md-6">Description</th>
+            <th>Number of posts</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class ="col-md-6"> @Html.ActionLink("Software Engineer", "Threads", "Home")</tdclass>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td class ="col-md-6">@Html.ActionLink("Information Security", "Threads", "Home")</tdclass>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td class ="col-md-6">@Html.ActionLink("Operation System", "Threads", "Home")</tdclass>
+            <td>15</td>
+        </tr>
+    </tbody>
+</table>
+<br> <br>
+<h2>Other things</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="col-md-6">Description</th>
+            <th>Number of posts</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="col-md-6">@Html.ActionLink("Technical Help", "Threads", "Home")</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td class="col-md-6">@Html.ActionLink("Note Taking Request/Offer", "Threads", "Home")</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td class="col-md-6">@Html.ActionLink("Tutor Request/Offer", "Threads", "Home")</td>
+            <td>15</td>
+        </tr>
+    </tbody>
+</table>
