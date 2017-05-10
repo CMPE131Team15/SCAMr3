@@ -290,7 +290,7 @@
     <Content Include="Views\Home\Boards.cshtml" />
     <Content Include="Views\Home\FAQs.cshtml" />
     <Content Include="Views\Home\GeneratedSchedule.cshtml" />
-    <Content Include="Views\Home\Profile.cshtml" />
+    <Content Include="Views\Home\UserProfile.cshtml" />
     <Content Include="Views\Home\Schedule.cshtml" />
     <Content Include="Views\Home\Threads.cshtml" />
   </ItemGroup>

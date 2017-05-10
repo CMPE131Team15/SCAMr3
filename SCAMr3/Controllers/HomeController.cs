@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SCAMr3.Models;
 
 namespace SCAMr3.Controllers
 {
 	public class HomeController : Controller
 	{
+
+		private StudentDBContext db = new StudentDBContext();
+
 		public ActionResult Index()
 		{
 			return View();
@@ -41,10 +45,25 @@ namespace SCAMr3.Controllers
 			return View();
 		}
 
-		public ActionResult Profile()
+		public ActionResult UserProfile(int? id)
 		{
-			ViewBag.Message = "My Profile page.";
-
+			if(id == null)
+			{
+				ViewBag.Message = "This is not a valid person.";
+			}
+			else
+			{
+				Student student = db.Students.Find(id);
+				if (student == null)
+				{
+					return HttpNotFound();
+				}
+				ViewBag.Message = "Hey there, " + student.Name.ToString() + ".";
+				ViewBag.Name = student.Name.ToString();
+				ViewBag.Major = student.Major.ToString();
+				ViewBag.Year = student.Year.ToString();
+			}
+			
 			return View();
 		}
 
