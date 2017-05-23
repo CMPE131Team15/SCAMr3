@@ -67,6 +67,13 @@ namespace SCAMr3.Controllers
 			return View();
 		}
 
+		public ActionResult Edit_Profile()
+		{
+			ViewBag.Message = "Edit Profile page.";
+
+			return View();
+		}
+
 		public ActionResult FAQs()
 		{
 			ViewBag.Message = "FAQs";
